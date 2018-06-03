@@ -1,0 +1,352 @@
+/* This sheet applies to all pro stylesheets */
+
+/* =Layout Widths
+---------------------------------------------------------------------------------- */
+
+#searchform {
+	width: 650px; /* !important */
+}
+#searchform div div {
+	width: 642px;
+}
+#searchform input.text {
+	width: 570px;
+}
+
+/* for new search bar */
+#searchform div.search-wrap {
+    background:none repeat scroll 0 0 #EBEBEB;
+    padding:6px;
+    overflow: hidden;
+    zoom: 1;
+    height: auto !important;
+}
+#searchform div.search-wrap div {
+    width:auto;
+}
+#searchform div.search-wrap div.radius {
+	background: transparent none;
+	padding: 4px 0 0 0;
+	margin: 0;
+	border: 0;
+	float: right;
+	height: auto !important;
+}
+#searchform input#search {
+    width:293px;
+    border-right: 1px dotted #ccc;
+    padding: 5px 11px;
+    margin: 6px 0;
+}
+#searchform input#near {
+    width:254px;
+    border-left: 1px dotted #ccc;
+    padding: 5px 11px;
+    margin: 6px 0;
+}
+/* end new search bar */
+
+div#content {
+	width: 990px;
+}
+div#content .inner {
+	width: 950px;
+	min-height: 700px;
+}
+.section, #searchform {
+	width: 650px;
+}
+#mainContent {
+	width: 650px;
+}
+#sidebar, ul.widgets {
+	width: 260px;
+}
+ol.jobs dd.title {
+	width: 310px;
+	padding-right: 10px;
+}
+ol.jobs dd.location {
+	width: 140px;
+	padding-right: 10px;
+}
+ol.jobs dd.date, ol.resumes dd.date {
+	width: 70px;
+	text-align: right;
+}
+
+.wider #mainContent, .wider .section {
+	width: 950px !important
+}
+.wider ol.jobs dd.title {
+	width: 510px !important;
+}
+.wider ol.jobs dd.location {
+	width: 240px !important;
+}
+.wider #searchform {
+	width: 950px !important
+}
+.wider #searchform div div {
+	width: 942px !important
+}
+.wider #searchform input.text {
+	width: 875px;
+}
+
+#topNav ul {
+	width: 988px;
+}
+
+ul.widgets li.widget {
+	width: 260px;
+}
+ul.widgets li.widget-submit div {
+	width: 254px;
+}
+
+/*=Responsive
+---------------------------------------------------------------------------------------*/
+
+@media screen and (max-width: 1000px) {
+
+	#topNav ul {
+		width: 98%;
+	}
+	.inner {
+		width: 98%;
+	}
+	#mainContent, .section, #searchform {
+		width: auto;
+		position: relative;
+	}
+	.section {
+		width: 100%;
+	}
+	#mainContent {
+		margin-right: 305px;
+	}
+	#sidebar {
+		margin-left: -260px;
+		position: relative;
+	}
+	div#content {
+		width: 98%;
+	}
+	div#content .inner {
+		width: 95.959596%;
+	}
+	#searchform input#search {
+		border-right: 0;
+	}
+	/* allows #searchform to expand height wise */
+	#searchform div div {
+		height: auto;
+	}
+	#searchform,
+	#searchform div div {
+		width: auto;
+	}
+	#searchform div {
+		height: auto !important;
+	}
+	#searchform input#search {
+    	border-right: 0
+	}
+	#searchform input#near {
+    	border-left: 0;
+	}
+	ol.jobs dd.title {
+		clear: left;
+	}
+	.wider ol.jobs dd.title {
+		clear: none;
+	}
+	ol.jobs dd.title {
+		width: 50%;
+		padding-right: 1.53846154%; /* 10px */
+	}
+	ol.jobs dd.location {
+		width: 30%;
+		padding-right: 1.53846154%; /* 10px */
+	}
+	ol.jobs dd.date, ol.resumes dd.date {
+		width: 10.7692308%; /* 70px / 650px */
+		float: right;
+	}
+	.wider ol.resumes dd.title {
+		width: 60%;
+	}
+	.wider ol.jobs dd.date{
+		width: 7%;
+		float:left;
+	}
+	ol.resumes dd.date,
+	.wider ol.resumes dd.date{
+		float: right;
+	}
+	.wider #mainContent, .wider .section {
+		width: 100% !important;
+	}
+	.wider ol.jobs dd.title {
+		width: 51% !important; /* 510 / 1000 */
+	}
+	.wider ol.jobs dd.location {
+		width: 24% !important; /* 240 / 1000 */
+	}
+	.wider #searchform {
+		width: 100% !important;
+	}
+	.wider #searchform div div {
+		width: 100% !important;
+	}
+	.wider #searchform input.text {
+		width: 87.5%; /* 875 / 1000 */
+	}
+	/* widget */
+	ul.widgets li.widget.widget-nav {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 860px) {
+	#mainContent, .section, #searchform {
+		width: 100%;
+	}
+	#mainContent {
+		margin-right: 0;
+	}
+	.section {
+		position: relative;
+	}
+	#searchform div.search-wrap div {
+		width: 100%;
+	}
+	#searchform div.search-wrap div.radius {
+		width: auto; /*fixes radius selector box */
+	}
+	#searchform {
+		display: block;
+	}
+	#searchform input#search {
+	    border-right: 1px dotted #ccc;
+	}
+	#searchform input#near {
+	    border-left: 1px dotted #ccc;
+	}
+	.wider #searchform input#search {
+	    border-right: 0;
+	}
+	.wider #searchform input#near {
+	    border-left: 0;
+	}
+	.wider ol.jobs dd.location {
+		padding-left: 0;
+		width: 51%;
+		clear: none;
+	}
+	.wider ol.jobs dd.date {
+		width: 70px;
+		float: right;
+	}
+	.wider ol.jobs dd.title {
+		clear: left;
+	}
+	/* widgets */
+	#sidebar {
+		margin-left: 0;
+	}
+}
+
+@media screen and (max-width: 710px) {
+
+	#searchform input#search {
+    	width: 90%;
+	}
+	#searchform input.text {
+		float:none;
+	}
+	#searchform input#near {
+		border: none;
+		width: 90%!important;
+	}
+	#searchform input#search {
+	    border-right: 0;
+	}
+	#searchform input#near {
+	    border-left: 0;
+	}
+	ol.jobs dd.title {
+		clear: left;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#searchform input#near {
+		border: none;
+		width: 100%;
+	}
+	ol.jobs dd.title,
+	.wider ol.jobs dd.title {
+		clear: none;
+		width: auto;
+	}
+	ol.jobs dd.location,
+	.wider ol.jobs dd.location {
+		clear: left;
+		padding-left: 110px;
+		width: 140px;
+		padding-right: 10px;
+	}
+	ol.jobs dd.date,
+	.wider ol.jobs dd.date {
+		clear: none;
+		width: 70px;
+	}
+	.wider ol.jobs dd.title {
+		width: 60% !important;
+	}
+	.wider ol.jobs dd.location {
+		width: 40% !important;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	ol.jobs dd.title {
+		width: 200px;
+	}
+	/* resume */
+	ol.resumes dd.date {
+		width: 70px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	ol.jobs dd.title,
+	.wider ol.jobs dd.title {
+		clear: left;
+		width: 100%;
+	}
+	.wider ol.jobs dd.title {
+		width: 100%!important;
+	}
+	ol.jobs dd.location,
+	.wider ol.jobs dd.location {
+		padding-left: 0;
+	}
+	ol.jobs dd.type,
+	.wider ol.jobs dd.type {
+		width: 150px;
+		font-size: 1.5em;
+	}
+	#searchform div.search-wrap div {
+		width: auto;
+	}
+	/* section footer links */
+	.section_footer li a {
+		border-bottom: 1px solid #E4E4E4;
+	}
+	.section_footer li.edit-job a {
+		border-bottom: none;
+	}
+}

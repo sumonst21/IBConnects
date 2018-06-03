@@ -1,0 +1,7 @@
+Modified		changelog.txt
+Modified		framework
+Modified		functions.php
+Modified		includes/admin/dashboard.php
+Modified		jobroller.pot
+Modified		style.css
+Modified		theme-framework

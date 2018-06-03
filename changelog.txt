@@ -1,0 +1,832 @@
+1.8.7 - 2016-12-15
+fixes:
+	- Fixed incompatibility with WordPress 4.7
+	- Fixed missing icons on Theme Dashboard.
+changes:
+	- Updated Font Awesome library to 4.7.0
+
+1.8.6 - 2016-11-09
+fixes:
+	- Fixed issue where user couldn't delete website in a resume.
+	- Fixed issue with not saving data from 'Job expiration details' metabox.
+	- Fixed issue with not displaying featured jobs on paged result pages.
+	- Fixed issue with sending emails from contact form.
+	- Fixed PHP notice about undefined property WP_Post_Type::$slug
+	- Fixed issue with admin capability to submit resumes.
+	- Fixed issue with tabindex in submit job form.
+	- Fixed issue where contributor could enter shortcodes in the description field.
+	- Fixed issue with stripping HTML tags from email body options in the admin pages.
+	- Fixed issue with displaying 'add new order' button in the admin area.
+	- Fixed "Allow users to view their order list" option that was not saving it's state.
+	- Fixed some issues with the Facebook widget.
+	- Fixed new user notification emails.
+changes:
+	- Updated Smooth Scroll JS library to 2.0
+	- Updated qTip1 JS library to qTip2 version 3.0.3
+	- Switch to use jQuery UI styles from Framework.
+	- Added more informative error messages when editing resumes.
+	- Improved server side validation of resume website field.
+	- Removed jQuery Google CDN option.
+	- Moved log file to protected 'uploads/at-logs/' dir.
+	- Added hook 'jr_job_filter_taxonomies' to tax array inside the filter form.
+	- Added filter 'jobs_taxonomy_title' to job taxonomy template.
+	- Added action hooks 'before/after_jobs_taxonomy_title' to job taxonomy template.
+	- Added filter hooks to new user notification emails.
+	- Deprecated app_new_user_notification() function.
+
+1.8.5 - 2016-01-06
+fixes:
+	- Switched Recaptcha request method from POST to Curl (was incompatible with some servers)
+	- User password changes without request from the user
+	- Some incompatibilities with new PHP7
+changes:
+	- Change http to https for social links
+
+1.8.4 - 12/16/15
+fixes:
+	- Missing fields in meta boxes in edit job backend
+	- Form submit stuck on job details
+
+1.8.3 - 12/09/15
+fixes:
+	- Reset password failing sometimes
+	- Added missing text domains for translations
+	- Resumes 'Desired Position' field not being saved
+	- Lost user password after edit profile
+	- reCaptcha not showing on registration page
+	- CSS color issues on notices
+changes:
+	- Replaced old reCaptcha with reCaptcha v.2.0
+	- Added compatibility for WP 4.4
+	- Don't minimize stylesheets
+
+1.8.2 - 08/26/15
+fixes:
+ 	- Duplicate field showing on registration form after WP 4.3
+	- Anti-Spam question not being displayed
+	- Views counter not showing on single job listings
+	- Replaced 'Job expires in Endless' text with 'Endless' for endless jobs, on the single job listings footer
+changes:
+	- Moved 'Disable Blog' and 'Show Breadcrumbs' options to 'Site' section in WP Customizer
+	- There's now only one password field in profile, reset password and edit profile pages (WP 4.3 or later)
+	- Re-organized reCaptcha options
+
+1.8.1 - 06/23/15
+ fixes:
+	- Google Analytics javascript tags being stripped out
+	- Purchased packs being sorted from oldest to most recent
+	- Javascript errors on job preview page
+	- Hierarchical job categories not displaying their parents on the breadcrumb
+	- Invalid reset password URL sent on password reset email
+	- Javascript ads related code being stripped of tags in the ad fields, under the 'Advertising' tab
+	- Site title not being displayed when site logo is disabled
+	- JavaScript alerts sometimes showing when creating custom fields
+	- Security vulnerability where a user could take control of other users posts
+	- Job edit icon being displayed (but not clickable) when job editing disabled
+	- Option 'Show Empty Categories' working opposite
+	- Custom fields not being saved correctly
+changes:
+	- Additional info added to the Geocoding API Key option
+
+1.8 - 05/14/15
+ fixes:
+	- Added missing 'esc_url()' or 'esc_url_raw()' for URL's
+	- Sorting by jobs expiration date on backend job listings page
+	- Author posts link not being returned correctly for custom post types
+	- Job filtering not working as expected immediately after doing a search
+	- External job feeds triggering JS error when loading more results and none exist
+	- Some emails being sent from 'wordpress@domain' instead of the email address specified in the settings page
+	- CSS Stylings for 'Stripe' payment gateway
+	- Removed actions 'before_front_page_jobs' and 'after_front_page_jobs' from job archive listings since they should only be triggered on the front page
+	- Updated jQuery UI file location (was causing an internal 404 error)
+    - Featured jobs per page option being ignored
+    - Undefined property: WP_Query::$queried_object when WP_DEBUG enabled
+ changes:
+	- Revamped backend settings page with richer descriptions and tooltips
+	- File structure reorganization
+	- Moved all core PHP code inside the main templates to internal files (meaning cleaner and smaller template files for easier child theming)
+	- Updated job preview page to display all fields available on the job submit page
+	- Moved all appearance settings to WordPress's customizer page
+	- Added a default empty value for job types on job submit. The job type dropdown now default to 'Select a job type' instead of the first job type from the list
+	- Deleted '-process' suffixed files inside '/forms/' folder ( (e.g: application-process.php, filter-process.php, etc)). Moved respective functions to 'forms.php'
+	- Replaced sprites with font icons where used
+	- Tweaks to all theme color schemes for a more modern look
+	- Deleted obsolete images from images folder
+	- Removed 'theme-' prefix from most of the files in '/includes' folder
+	- Simplified most of the template files by moving PHP code to internal files
+	- Updated payment gateways HTML markup
+	- Moved custom forms from 'Jobs' to it's own menu named 'Forms'
+	- Deleted obsolete 'countries.php' file
+	- Deleted obsolete template files: 'taxonomy-job_cat', 'taxonomy-job_type', 'taxonomy-job_tag', 'taxonomy-job_salary'
+	- Updated placeholder ad 125x125 images and removed the default border
+	- Removed 'Dashboard' from WP toolbar
+	- Restored WP toolbar items being removed by JobRoller
+	- Responsive backend jobs, resumes, orders, subscriptions and alerts listings
+ new:
+	- Logo has been upgraded with a flat look and now supports retina/hdpi devices. Tagline has been removed as well.
+	- Use new AppThemes options API (updated settings page) - replaced all ocurrences of 'get_option()' for jobroller options with '$jr_options' global (e.g: $jr_options->option_name)
+	- Front page is now a static page
+	- Front page jobs now display 'More' instead of page numbers (redirects users to job archives page on click)
+	- Front page jobs can display different number of regular/featured jobs then the main jobs archive page
+	- Jobs importer for importing jobs from .csv files
+	- Added 'examples' folder with two .csv example files
+	- Added support for Google Geo Maps API key to be able to manage search quotas
+	- Compulsory registration of job seeker before applying for a job
+	- Custom forms for Resumes (add any field, including file upload fields for resumes - located under 'Forms')
+	- Added 'Allow Comments' option for job listings
+	- Added new sortable 'Addon(s)' column on backend job listings page
+	- New template file for customizing 3rd party job feeds markup
+	- New template file for pagination
+	- New template file for custom resume fields
+	- Allow appending a hidden default keyword to Indeed searches for more accurate results
+	- Added jQuery validation to all forms (validates fields without submitting the form)
+	- Added jQuery email validation on email fields
+	- Allow specifying internal keywords for Indeed searches - helps retrieving more relevant jobs on user searches
+	- AppThemes 'Add-Ons Marketplace' integration under the JobRoller menu (browse add-ons directly from your WordPress dashboard)
+	- Optional multi-column footer customizable within WordPress Customizer (change footer width, columns width and number of columns)
+	- Color customizations added to WordPress Customizer (header color, background color, links color, buttons color, etc)
+	- Optional breadcrumbs navigation
+	- Added option to set number of jobs displayed on front page
+	- Added option to set number of featured jobs displayed on front page
+	- Use 'Home' for static front page and 'Blog' for posts page, in WordPress reading settings
+	- Cleaned up main template pages from unused code
+	- Added page indication to resumes archive page title
+	- Added font icons to single page listing for: job location, job taxonomies, job remaining days
+	- Auto install JobRoller default widgets on fresh theme installs
+
+1.7.5 - 11/03/14
+fixes:
+	- 'Last Week' jobs in date filter retrieving wrong job results due to misspelled slug name
+	- Resume addons not being assigned to users on manually assigned job packs
+	- Special characters like "ü", "ö", "ä" encoded on paginated search input
+	- Validation notices not showing on resumes save
+	- Duplicate validation notices
+	- Allow additional domain names like '.info' in contact email address field
+	- Google maps not showing in single job page
+	- Job categories showing incorrect jobs count
+changes:
+	- Added missing skills section metabox to backend edit resumes page
+	- Added job type filters and search bar to date archive listings
+	- Moved job/resume author metabox to sidebar
+	- Removed obsolete post type changer from backend edit post page
+	- Removed duplicate bundled JS files: jquery.validate.js and jquery.footable.js
+	- Improved date sorting for Indeed first page of results
+	- Support for TinyMCE on job and resume plans descriptions
+	- Tweaks to the search process
+	- Reduced number of queries used on search, job and resume archive listings
+	- Minor internal changes to follow WordPress guidelines
+	- Updated AppThemes framework
+
+1.7.4 - 05/09/14
+fixes:
+	- Payment gateway selection
+	- Parse error in older PHP versions (PHP <= 1.5.2) when saving payment plans
+changes:
+	- Added contextual location parameter to 'appthemes_before_sidebar_widgets()'
+
+1.7.3 - 04/23/14
+fixes:
+	- Purchased job packs removed from user dashboard if related job pack plans were removed in backend by an admin
+	- Author pages pagination
+	- Warning errors when editing a job pack from the backend (when WP_DEBUG enabled)
+	- Strict standard warnings (when WP_DEBUG enabled)
+changes:
+	- Replaced 'include app_template_path()' with 'load_template( app_template_path() )' in 'wrapper.php' to allow passing template vars
+	- TinyMCE in frontend fields is now called using 'wp_editor()', after changes in WordPress 3.9
+	- Allow overriding 'jobs by' HTML/CSS stylings by job feed plugins like Indeed, Simply Hired and LinkedIn Publisher
+	- New 'channel' option in Indeed
+	- Default empty values to 0 when adding price plans
+
+1.7.2 - 11/04/13
+fixes:
+	- Strict standard notices
+	- Job categories showing incorrect number of job postings
+	- Intermitent PHP error when doing a location search
+	- Warning message when displaying the user 'Last x Orders' in the user profile 'Screen Options'
+	- Job type filter not working when filtering jobs by salary or tags
+	- Log warnings when searching for jobs by keyword and location, and then doing a new search only by location
+	- Wrong category counts related with custom forms and job plans categories being included on the count (please bulk re-save your job plans and custom forms for the fix to take effect)
+	- Some errors checking producing log errors
+	- User IP not being stored on job submit
+	- Camel case and typos in 'Jobs by Date' items heading titles (e.g: before - This weeks Jobs; after - This Week's Jobs)
+	- File upload error when uploading company logo and custom field files at the same time
+	- Responsive styles for single job plan types
+	- Last login time not displaying correct date/time
+	- WP_PageNavi fatal errors
+	- Canceled jobs being displayed as expired on home page (when 'Expired Jobs Action' set to 'Display Message')
+changes:
+	- Moved from static 'System Info' page to framework's
+	- Validation on the application form is now done before the form is submitted to avoid loosing any attached files
+
+1.7.1 - 06/14/13
+fixes:
+	- Blog featured images showing up twice
+	- Free Packs not purchasable from the dashboard
+	- Missing "Edit Page" button on the WP Admin Tool bar
+	- NaN/NaN/NaN dysplaying on the "Expires on" field at the backend
+	- Resume salary field not optional
+	- Pagination on author pages not working
+	- Pagination not working correctly on taxonomy pages
+	- Pack plans duration inheriting job duration
+	- Orders & Subscriptions Tab Appearing when not charging for job postings
+	- Pack job counts not being displayed properly if greater then 10
+	- External plugin WP-PageNavi not working
+	- Role selection not available while registering, when submitting a job
+	- 'Buy Pack' widget not being displayed to visitors
+	- Missing RSS feed button for featured jobs
+	- Pack plans not expiring automatically by date
+	- Corrected the tip "Durations must be shorter than the Job duration." to "Durations must be shorter or equal than the Job duration."
+	- CSS styling in the last step for the job submit form
+	- 'Orders' tab being displayed to job seekers dashboard despite not being able to subscribe to resumes
+	- Custom forms CSS styling issues on labels when using German localization (or with other translations using longer words)
+	- jQuery validation plugin messages not localized
+	- CSS styling issues in single Plans when there were no additional addon options displayed
+	- Job durations set to blank (endless jobs), defaulting to 30 days, on paid plans
+	- Company URL on featured jobs returning 404 page not found
+	- Post count on job categories widget not being displayed
+	- RSS alert feeds not found when enabling RSS alert feeds exclusively (alert feeds enabled + email alerts disabled)
+	- Custom forms 'radio' and 'checkbox' fields set as 'required' not triggering the required empty fields warning
+	- Job feeds (i.e: Indeed) keyword search not displaying the most relevant results
+	- Currency format on bank transfer price total
+changes:
+	- JobRoller is now Responsive
+	- Improved location search with smart radius. When radius is not set it will be automatically calculated based on the location being searched. Example, searching by 'California' will default to 745 radius
+	- Visitors are now redirected to the login page when clicking 'Buy Pack' on the Packs widget
+	- Removed included resumes addons duration limit footer message ("Durations must be shorter than..." ). Resumes addons durations can be longer then the pack or job duration.
+	- Ignore resume subscription (access is Free) if resumes visibility settings are set to "Public"
+	- Allow hidding resumes from Job Seekers by adding resume visibility settings for 'Job Listers / Recruiter' only
+	- Expired pack plans now trigger an email to the pack author informing about the pack expiration
+	- Two default single pricing plans (Free and Paid plan) and one category are now automatically generated on new installs
+	- Replaced 'esc_js()' with 'esc_attr()' in job feeds 'onmousedown' attribute
+	- Added TinyMCE to 'How to Apply', on backend
+	- Added custom icons to Jobs and Resumes backend listings
+
+1.7.0 - 04/22/13
+fixes:
+	- Some custom tables being concatenated with $wpdb->prefix instead of using $wpdb->table_name
+	- No email notifications sent to buyer after purchasing a resume subscription
+	- Banner alignment when using the default theme
+	- No background color on field labels and form steps
+	- Missing translations on the backend
+	- Duplicate key name database warnings
+	- Browse/view resumes visibility better integrated with the backend role visibility options
+	- Searches by keyword+location defaulting to OR instead of AND
+	- Re-listed job does not follow the expiry period on 'Default Expiration Days'
+changes:
+	- BACKEND:
+		- Added AppThemes custom forms to the job submit form:
+			. Custom forms are created on the backend and assigned to single or multiple job categories.
+			. Custom form fields are displayed when job listers select the related job category
+			. Custom fields values are displayed on the job page
+		- Replaced old pricing structure, including job packs and resumes pricing with AppThemes payments framework. This means unlimited pricing plans for single pricing, job packs or resumes subscriptions. All orders and plans are now managed on a new payments menu
+			. Payments framework features:
+				- Adds Bank Transfer as a new payment option, besides PayPal
+				- Compatible with any AppThemes gateway available on the marketplace (2Checkout, Authorize.NET, Google Wallet, Stripe, etc)
+				- Compatible with AppThemes Coupons, available on the marketplace
+				- Allow tax charge
+				- Multiple currencies
+				- Detailed Orders listing filterable by status
+				- Create infinite Job Plans with usage limit for one or multiple job categories
+				- Create infinite Resumes Plans (subscriptions) with usage limit and trial option
+				- Included pricing addons. These are purchase options that can be included Free on Job plans:
+					. Feature Addon (feature jobs on homepage and listings, feature job in category). Can be limited to duration or usage
+					. Resumes Addon (browse resumes, view resumes). Can be limited to duration or usage
+				- Separate pricing addons. These are additional optional purchase options that can have a price and duration. Available addons:
+					. Feature Addon (feature jobs on homepage and listings, feature job in category)
+					. Resumes Addon (browse resumes, view resumes)
+				- Select plan type: Single, Pack
+				- Additional editable duration on the backend job page: job duration, and featured addons duration
+				- Adds an intermediate step on the job submit form for the job Plan selection 'Select Plan'
+		- JobRoller dashboard now uses AppThemes framework and displays more information
+		- Added two additional panels to Resumes backend with Education/Experience (uses TinyMCE) and custom fields: salary, email, telephone, mobile
+		- Added Google mini map location sidebar to the Resumes backend (similar to backend job page)
+		- Better backend options organization and grouping
+		- Uses meta data to assign featured jobs instead of 'Featured' category (note: you should delete the 'Featured' category after upgrading)
+		- Removed obsolete menu pages (moved to the new payments menu): Pricing, Job Packs and Orders
+		- Removed obsolete Tabs (managed internally): Pages
+		- New template page 'Terms & Conditions' automatically added to WordPress Pages
+		- Additional security options to display reCapthca on contact forms (including the resumes contact form) and 'Apply Online' form
+		- New backend options:
+			. JobRoller > Settings > Jobs (Job Options) > Charge for Job Listings
+			. JobRoller > Settings > Jobs (Job Listings) > Regular Jobs per Page (replaces the default WordPress 'Blog pages show at most' under Settings > Reading)
+			. JobRoller > Settings > Jobs (Job Listings) > Featured Jobs per Page
+			. JobRoller > Settings > Jobs (Job Listings) > Featured Jobs Sort Method
+			. JobRoller > Settings > Resumes (Job Seeker Options) > Enable Recruiters Registration
+			. JobRoller > Settings > Security (ReCaptcha) > Enable on Registration Form
+			. JobRoller > Settings > Security (ReCaptcha) > Enable on Contact Forms
+			. JobRoller > Settings > Security (ReCaptcha) > Enable on Apply Online Form
+		- Replaced old 'Start/End Subscription', 'Start/End Trial' with single 'Manage Subscriptions' on the backend Subscriptions list, that links to the user profile
+		- New actions available for admins on each user profile: Reset Usage (resets plan usage to 0 for plans with usage limit so customers can select the plan again until the usage is reached again)
+		- Jobs submitted on the backend are now included on the job alerts
+		- Added 'Expired' status to expired jobs. Replaces the old 'private' status. Jobs can be filtered on the backend by the new 'Expired' status
+		- Additional 'Expire Date' column on the backend job listings.
+		- Additional columns on the Resumes backend listings: 'Job Types', 'Job Categories', 'Job Specialties', 'Spoken Languages' and 'Location'
+		- Use single sprite for JobRoller and Jobs menu icon. Job menu icon was replaced with opened briefcase
+		- Updated CSS classes to native WP classes on backend buttons
+	FRONTEND:
+		- New selectable user Role: Recruiter. By default, Recruiters can submit jobs and browse/view resumes (if resumes subscriptions are disabled), while Employers (job listers) can only submit jobs
+		- New orders Tab on the users dashboard with information on every user order. Filterable by order status
+		- Page auto scroll down on errors when applying to jobs
+		- Members are now redirected to their dashboard instead of the home page, after logging in
+		- Added pagination to each Tab on the users dashboard
+		- Allow changing password on user profile when password is disabled on registration
+		- Job recommendations do not require a keyword anymore. Job Seekers can set their job preferences and get dashboard recommendations by filling only the job type
+		- Better CSS styling for the 'Buy Packs' widget
+	GENERIC:
+		- Ping notifications on published jobs (backend/frontend). Update services (WordPress > Settings > Writing) are not exclusive to posts anymore
+		- Updated Google geocoding API to v.3
+		- Updated Google CDN jQuery version to 1.8.3
+		- Unified email subject on all automatic email notifications to '[Site Name] Subject' (i.e: [My JobRoller Site] New Job Submitted )
+		- Secured values from $_GET with WP esc_attr() for additional security
+		- Use WP function wp_remote_get() instead of file_get_contents() for remote URL's
+		- Removed 'jobroller-no-admin.pot' file (recommended plugin: http://wordpress.org/extend/plugins/wp-native-dashboard/)
+		- Renamed 'admin-style.css' to 'admin.css'
+		- Added GNU license to 'styles.css' header
+
+1.6.5 - 01/14/13
+fixes:
+	- Indeed loader always showing even if option was disabled on the settings page
+	- 'Allow trial' option for resumes always defaulting to 'Yes'
+	- Resumes subscription start date being displayed as the end date on new resumes subscriptions
+	- Invalid URL for the AppThemes Twitter feed on the Dashboard
+	- Missing translations for Resumes statuses
+	- Paid featured job being always counted and subtracted from featured offers, on job packs with featured offers
+	- Resume search ignoring location when searching by keyword AND location
+	- Emails not being sent on job edit when option 'Edited Job Requires Approval' was set to 'Yes'
+	- Error notice not being displayed when subscribing Job Alerts without selecting any criteria
+	- Plural forms missing localization (i.e: Job Remaining/Jobs Remaining)
+	- Escaped search fields attributes to fix possible XSS vulnerabilities
+changes:
+	- RSS Feed performance improvements. Should fix problems for some users reporting the warning: 'preg_match() [function.preg-match]: Compilation failed: regular expression'
+	- Display admin warning when Resumes pricing is enabled but the subscription price is empty
+	- Changed resumes subscription end date and start date formats to 'Full Month Day, Year @ hour:minutes:seconds am/pm' (i.e: January 1, 2013 @ 01:00:00 pm)
+	- Replaced UNIQUE KEY with PRIMARY KEY for 'jr_counter_*' tables
+	- Removed unused Ad functions from 'appthemes-functions.php'
+	- WP 3.5: Stop using prepare() with no parameters (http://core.trac.wordpress.org/ticket/22262)
+	- WP 3.5: Removed bundled 'jquery-ui-1.8.custom.min' file and instead use 'jquery-ui-core', bundled with WP. Uses latest jQuery
+	- WP 3.5: Replaced 'appthemes' text domain with constant APP_TD (i.e: __('Some text', 'appthemes') is now __('Some text', APP_TD) ),
+	  whereas APP_TD value is the current theme: 'jobroller', 'classipress', 'vantage', etc. ***
+	- WP 3.5: On new installs, links are not added to the Links Manager anymore. Links Manager is hidden after WP 3.5
+	- WP 3.5: Added 'button-secondary' CSS class to admin buttons
+	- Code optimization
+
+	*** IMPORTANT: If you're using a child theme you may need to update your files to reflect this change
+
+1.6.4 - 10/05/12
+fixes:
+	- Reverted login/register action hooks to original function calls to simplify theming
+	- Recaptcha not working properly
+	- Password strength indicator not working
+	- Disabling password fields on registration form always asking for password
+	- Terms and conditions not being properly validated
+	- Fatal error on failed login
+	- Missing translations on the contact form
+	- Missing translations for 'Select a Category' and 'Select a Salary' on the edit job form
+	- Missing pagination translation
+	- Missing CSS stylings for eror notices on the resume contact form
+	- Indeed results sort order being ignored
+	- Contributors can access to wp-admin even when security is set to admins only (on WPMU sites)
+	- Custom emails for new users registration being replaced with default WP registration email
+	- Indeed results limit for job searches being ignored
+	- Search for jobs location title always returned in english
+	- Job seeker 'Your Availability' option displaying '0' if left blank
+	- Salary field in resume sometimes showing 'array'
+changes:
+	- Replaced 'the_content' filter with 'jr_how_to_apply_content' in 'how to apply' field, on single job pages
+
+1.6.3 - 08/15/12
+fixes:
+	- HTML text editor not being displayed
+	- Location search using german letters (i.e: Meißen, Gießen)
+	- Endless duration jobs in Packs defaulting to 30 days for the first posted job from the Pack
+	- Packs with unlimited duration displaying negative dates on the ‘Packs’ Tab
+	- Duplicate pending payment packs being displayed on the lister dashboard
+	- Featured jobs purchased with a Job Pack sometimes being published before payment confirmation
+	- Missing PayPal currency symbols avilable on the backend not being displayed on the frontend
+	- Google maps API region identifier using ‘gl=’ param instead of ‘hl=’ (region search should be more exact)
+changes:
+	- Using Login logic from AppThemes framework
+	- CSS styling changes on front end notices (small icons)
+	- Additional security checks to avoid Javascript exploits while submitting jobs using Job Packs
+	- Location search results matching the location are now displayed before jobs with location ‘anywhere’
+	- Changed message on ‘Subscriptions’ Tab for Packs offering temporary access to Resumes
+	- Display pack type info (User Pack/New Pack) on the Orders table
+	- Framework changes and additional code cleanup
+
+1.6.2 - 07/17/12
+fixes:
+	- Pagination on sites running Wordpress 3.4.x
+	- Indeed logo's redirecting users to simplyhired.com
+	- Changing job visibility to 'password' redirecting users to the login page instead of the job listing
+	- Resume images being displayed to users without resume access, on search engines
+	- Jobs duration always defaulting to 30 days
+	- Pagination not being displayed on the 'Alerts Subscribers' page
+	- 'Job Listing URL' permalink option not working properly
+	- Alerts not being triggered correctly for job descriptions containing quotes
+	- Location search always returning the country in english
+	- WP remote post check for PayPal IPN failing on the 'System info' page
+	- Fixed 'Warning: Division by zero' on the job packs page when using a single job category
+changes:
+	- Improved performance for location searches
+	- Removed 'post_type=' parameter from the RSS Feeds when using the feeburner url
+	- Clicking the author link on a blog page or blog listing now display the user posts instead of his jobs list
+	- Pending jobs on the user dashboard no longer clickable by users with no admin permissions
+	- Added option to display Indeed results before or after DB jobs
+	- Featured jobs are now displayed contextually on all the taxonomy pages (by job type, by job category, etc...)
+	- Fallback to the parent '/styles' folder when using child themes that do no use have their own '/styles' folder
+	- Added additional tooltip text to 'Job Type Base URL' informing that 'type' is a reserved Wordpress word
+	- Replaced 'Speciality' and 'Specialities' with 'Specialty' and 'Specialties'
+	- Added additional hook 'after_jobs_by_date'
+	- Added additional hook 'after_jobs_taxonomy'
+	- Replaced older Wordress deprecated calls
+	- Unified taxonomy templates into a single taxonomy template
+	- Additional structure changes for the AppThemes framework
+important:
+	- We are preparing to replace get_template_part() with require() on data validation pages (submit-job-process.php, confirm-job-process.php, etc).
+	  Do not use these files on child themes as they will become obsolete on future releases. New hooks will be provided to allow changes.
+
+1.6.1 - 06/06/12
+fixes:
+	- Fixed Free job packs not being displayed when the free job pack limit option was empty
+	- Fixed 'Catchable fatal error: Object of class WP_Error could not be converted to string' on sidebar widget
+	- Fixed warning RSS notice displayed on new job seeker registrations (when WP_DEBUG set to 'yes')
+	- Fixed cut tooltip message 'This banner appears in a job listing, usually between', on the advertising page
+	- Fixed pagination when listing jobs by Tag
+	- Fixed missing featured jobs when deleting the 'featured' category
+	- Fixed missing localization for some buttons on the admin Orders page
+	- Fixed missing strings on the .pot file
+	- Fixed packs with single jobs purchased from the dashboard not being displayed
+	- Fixed Indeed results sometimes not displaying the related jobs when using the sidebar widget
+changes:
+	- Color stylesheets are automatically disabled when using a child theme (child themes need to @import style.css and style-color.css)
+	- Complete rewrite of frontend notices that used URL parameters to avoid XSS exploits
+	- Job categories on the sidebar widget can be nested in two levels
+	- Jobroller related terms (job type, job categories, etc...) are no longer recreated every time the theme is updated (if there are posted jobs)
+	- Added extra comments to 'theme-enqueue.php' for loaded javacript files
+	- Allow Indeed jobs browsing (using sidebar widget) when there are no user queries set (returns US, part-time and full-time jobs)
+	- Saving the job alerts preferences now displays a notice
+	- Additional internal best practices changes
+
+1.6.0 - 05/18/12
+fixes:
+	- Paste from word in the job textarea. The 'Paste from Word' icon is now visible.
+	- Missing job and resumes icons on the dashboard menu, when using a child theme
+	- Login page title displaying incomplete 'login/register at'
+	- Contact form sending emails without filling any fields
+changes:
+	- Added hooks to allow additional 3d party job feeds like 'Simply Hired'
+	- Complete overhaul to the Indeed feed and addition of new features:
+		. Specify jobs source (job sites or direct employers)
+		. Sort results by date or relevance
+		. Multiple keywords allowed on each job query
+		. CSS class for sponsored Indeed jobs
+		. Cache Indeed frontpage results for better performance
+		. Search Indeed jobs by radius
+	- Job packs redesign
+	- New job packs options:
+		. Purchase from the employers Dashboard
+			. Buy button on the job packs widget
+		. Free job packs use limit. Limits the number of times a free pack can be used by each user
+		. Offer additional jobs on each job pack
+		. Allow featuring jobs for free from the available jobs on each job pack
+		. Give employers additional access to browse/view resumes on each job pack
+			. Any additional access is given for the duration of the pack and visible on the subscriptions tab
+		. Choose job categories for each pack. Categorized job packs are only visible on jobs with the related job categories
+		. Order packs
+		. Show/Hide pack job categories	from employers
+	- Pending payment job packs are now visible on the employers dashboard
+	- Job alerts email notifications:
+		- multiple options to avoid web hosts mass email limitations
+		- Multiple email formats:
+			. plain text
+			. basic HTML
+			. full customizable HTML email templates
+	- Job alerts RSS feeds
+	- Job alerts subscribers list
+	- Email notifications for job listers orders
+	- Hookable theme styles and color schemes. Theme developers can hook into the new filters and actions to add new styles
+	- Automatic custom theme styles loading. Any new CSS theme style detected on the (parent/child) styles folder will be selectable from the styles dropdown
+	- Resumes dropdown months are now translatable
+	- Hide resume contact button from resume authors
+	- Hide resume author when resumes listings are Public
+	- Replaced footer code into footer.php for easier customization and to avoid having to use the related hook
+	- Started using improved database functions from the framework for existing JR tables
+	- Added responsive design meta tags
+	- Added Swedish currency to the available currencies symbols
+	- Currency symbol visible on Resumes salary
+
+1.5.5 - 03/19/12
+
+fixes:
+	- SQL error related with job views counter
+	- Email not being validated when using the Resumes contact form
+	- Relist fee showing when editing jobs
+	- Indeed 'Browse By' defaulting to US listings when no results found
+	- Removed translation for the 'From: ' string  from wp_mail() headers
+changes:
+	- Added compatibility for the WangGuard plugin, for blocking unwanted users and spam
+	- Updated qTip v.1.0.0-rc3 to v.1.0
+	- It's now possible to search Indeed jobs by location only (no job keyword is necessary)
+	- Added appthemes_after_post( 'job_listing' ) hook in loop-job.php
+	- Added appthemes_after_post( 'resume' ) hook in loop-resume.php
+	- Added translations for Indeed job types on the .pot files
+
+1.5.4 - 02/22/12
+
+fixes:
+	- Subscribe Resumes Tab always showing on Job Seeker dashboard when manual resume subscriptions enabled
+	- Job packs widget being displayed on the sidebar to job seekers when adding resumes
+	- Resumes 'Allow Trial' option always active independently of the selected option
+	- Canada Territory location always displaying as 'anywhere'
+	- Job Packs with more that one free job not being subtracted
+	- Pagination not working on the Admin Orders page
+	- Invalid Linkedin url's on user profiles page
+	- Today's views counter not updating
+	- Duplicate expired jobs email notifications
+	- Error when trying to view single resume when 'Require active subscription to view resumes' option enabled
+	- Job type 'slug' being displayed in the confirm job page instead of 'name'
+	- Expired resume subscription emails being sent when reseting user passwords
+changes:
+	- Added option to pull Indeed jobs when using the browse sidebar widget
+	- Added relist fee price below the Relist button
+	- Different colors for new and purchased job packs
+	- Added Thai baht currency to the Job Listings Pricing page
+
+1.5.3 - 01/09/12
+
+fixes:
+	- Indeed integration not working outside the US
+	- Indeed Sponsored Listings not showing for some roles
+	- No Indeed listings in search results when set to 'Show only if no local results found'
+	- Strength indicator not working when editing profiles
+	- Wrong number of jobs in job pack when assigned from the back end
+	- Duplication of city names on google location field
+	- Featured jobs not being displayed on the homepage when renaming "Featured" category
+	- Untranslated text
+changes:
+	- Added one time payments to browse resumes for a fixed time period with PayPal standard accounts
+	- Added resume susbcriptions management page on the dashboard
+	- Added option to show popup contact form on job seeker's resumes instead of showing contact details
+	- Code optimization
+
+1.5.2 - 12/09/11
+
+fixes:
+	- Issue with single resume visibility settings being ignored
+	- Issue with posted job data disappearing when returning to previous page using the "Go Back" button
+	- Issue where the location 'Anywhere' would not show up on job listings or the single job page
+	- Issue with duplicated fields in Skills & Specialities on the add new resume page, using IE
+	- Issue with the user "Dashboard" being 'broken' when using Jobroller 1.5 with WordPress 3.3 Beta
+	- Issue where the word "Go" would appear over the magnifying glass image on the "Browse Resumes" page
+changes:
+	- Indeed listings are now loaded asynchronously to improve page loading speeds
+	- 'Desired Salary' currency on Resumes now uses the payment settings
+	- Displayed jobs remaining days are now rounded to the next highest day value. e.g: 0,5 days = 1 days left,  instead of 0,5 days = 0 days left
+	- Changed Google Maps API to return City names for Countries that do not return valid States
+	- Integration with new AppThemes framework
+
+1.5.1 - 10/21/11
+
+fixes:
+	- Job search box was breaking in IE
+	- Issue where posting more than 150 characters in the job description field broke submission
+	- Issue where resume search box button had "Go" visible
+	- Issue where footer div is misaligned on admin "System Info" page
+	- Issue with version number not being updated
+changes:
+	- None
+
+1.5 - 10/14/11
+
+fixes:
+	- Added a break in theme-geolocation when doing a reverse lookup, so that the correct location is found and used
+	- Localisation fixes
+	- Placeholder fallback script
+	- job term count after expired job
+	- Fixed unlimited job packs
+	- Pagination on author pages
+	- Fixed jr_check_jobs_expired cron job
+changes:
+	- Added 'gl' attribute to google map searches to add country code biasing
+	- Added new user type - Recruiters.
+	- Added radial search to resumes
+	- Added notice to resume when its private
+	- Apply form anti-spam only needed when logged out
+	- Apply form now lets you choose an existing resume
+	- When applying with an existing resume, the job lister gets a link with a key which lets them view the resume without logging in
+	- JS Google Maps API used to get place names rather than a reverse lookup, same in admin
+	- Transients used to store searches/lat-long to save on google api queries
+	- Added location option to indeed searches
+	- 'Anywhere' jobs are included in location search results
+	- Stylesheet path (child theme support) for colour scheme css files in header.php
+	- Different method of loading IE hacks (via class) - hack css files removed
+	- Added resume subscription button + IPN integration
+	- Edit user page lists a user's active job packs
+	- Added ability to delete packs from edit user page
+	- Added ability to add packs to users from the edit user page
+	- Added map view to single job listings
+
+1.4.2 - 5/26/11
+
+fixes:
+	- Fixed a few styling issues
+	- Fixed job tags counts
+	- Hidden resume link when turned off
+	- Fixed a few spelling errors
+	- Indeed results take country into consideration (when no search results found)
+	- edit resume link fix
+	- Updated google maps to work with v3 of the API
+	- empty resume category template fix
+changes:
+	- Added a 'submit resume' button to resume pages
+	- Popular listings widget (for jobs and resumes)
+	- New listings widget (for jobs and resumes)
+	- Added resume category widget
+	- Added sidebar nav for resumes section
+
+
+1.4.1 - 5/15/11
+
+fixes:
+	- Fixed issue where admins could not edit jobs from within the WordPress back office
+
+
+1.4 - 5/14/11
+
+fixes:
+	- Fixed lots of localisation issues (thanks to sebet on the forums)
+	- Map zoom level after page refresh
+	- Fixed share button styling on job listings
+	- Salary 'page not found' bug fix
+	- admin pending post search fix
+	- empty website fix
+	- fixed paging display
+	- Fixed tag display
+	- Tweaked indeed feed parser to avoid running out of memory
+	- Fixed indeed expired job checker
+changes:
+	- Added 2 new roles - job_listers and job_seekers
+	- Registration pages for both types
+	- Register page has role selection
+	- Added sidebar button for submitting resume (if enabled)
+	- Enhanced profile page for seekers
+	- Moved some un-needed br's from profile
+	- Resume submission forms
+	- Profile page overhaul
+	- Changes to Geo lookup when submitting job
+	- Placeholder text on search fix
+	- changed job_list class name to data_list
+	- Added elastic js for textarea growth
+	- Added different header for one with search box
+	- Renamed buttons on job listings from 'apply' to 'view and apply' when a url is defined
+	- Job seeker dashboard with recently viewed and starred jobs
+	- Added hooks to job seeker dashboard
+	- Added 'star job' button to job listings (for seekers)
+	- Replaced 'caller_get_posts' for WP 3.1 compatibility
+	- Job Seeker Job Recommendations based on Preferences
+	- TinyMCE 3.1 compatibility
+	- Forms use slug instead of name
+	- Expire date now uses wordpress time offset
+	- Indeed, added api js and onmouseclick code
+	- Expire job notifications tweaked
+	- Main RSS feed includes job listings
+	- Cron job rename
+	- Added options for resume visibility
+	- Added Indeed search results option when no local results found
+	- wp_remote_get for indeed results
+	- Made 'your name' field on job submissions optional; fields can now be left blank to show the poster's name and profile link instead
+	- Improved profile page
+	- Added profile template
+	- Added location to resume submit
+	- Expired indeed jobs are now deleted
+	- Added option to delete indeed jobs after xx days
+	- Changed method of detecting file extensions for compatibility
+	- Script paths SSL
+	- added body_class
+	- Added log entry when jobroller cannot reach google maps api
+	- Get template path used to make child themes easier
+	- Added posts, jobs, resumes, last login, registered columns to the WP admin users page
+	- Added new dashboard statistics for live resumes, total users, new job seekers/listers today and yesterday
+
+1.3 - 2/01/11
+
+fixes:
+	- Paypal urlencode
+	- Salary field
+	- Hide salary field option wired up
+	- Pack expire date fix
+	- Search uses LatLonBox so that you can search within a larger area rather than a point
+	- fixed return error after payment
+	- fixed relisting/moderation bug
+	- Current url trailing slashes
+	- Packs formatting
+	- Job Packs expire calculation was backwards
+	- Expirey fixes (after moderation)
+	- Search results pagination
+	- Wrapped text in contact form template with localization tags
+	- Fixed spacing issue with tag sidebar widgets
+	- Fixed naming issue with certain widgets and css classes
+	- Fixed tab index on creating new user accounts
+
+changes:
+	- Added wp_remote_post check in system info, + fallback in case it fails
+	- Added terms and conditions page option + checkbox
+	- Option for disabled password fields on reg form
+	- Added cron job viewer in system info
+	- Added new appthemes hooks
+	- Added separate comment templates for page, blog, job objects
+	- Added disable WordPress 3.1 admin toolbar option
+	- Added disable WordPress version meta tag option
+	- Separated comments from pings/trackbacks
+	- Removed search-xml.php which wasn't being used
+
+1.2.1 - 12/07/10
+
+fixes:
+	- Featured status maintained after edit
+	- excluded date archive page from menu
+	- Remaining days hidden on indeed posts (which have no expiration)
+	- job description field left blank
+
+changes:
+	- Added salary column to admin job view page
+	- Salary = hierarchical for checkboxes
+	- removed reference to jobs-by-location
+	- currency position option
+
+1.2 - 12/03/10
+
+fixes:
+	- Category counts
+	- Expire emails for pages issue fixed
+	- Fixed empty search bug
+	- Fixed broken links on user dashboard for active jobs
+
+changes:
+	- Added 'Job Packs' functionality
+	- New orders system/class/order page
+	- My Jobs page improvements
+	- Re-list Page Added
+	- Indeed.com auto-posting of jobs
+	- Job Salary (and option) field added
+	- Pack Pricing widget
+	- Sidebar nav widget
+	- Added template for job tags
+	- Browsing by date posted feature
+	- Browsing by location feature
+	- Allowed tagging of jobs
+	- Merged pricing and payment admin
+	- Added admin page to manage site advertisments
+	- Added and improved the ad widgets - 250x250 and 125x125
+	- Updated localisation strings to AppThemes standard
+	- Added jquery Google CDN option
+	- Added option to change all custom post type and taxonomy base urls (job tags, categories, salaries, types)
+	- Added debug option
+	- Added stats engine to track most popular jobs & blog posts. Daily & all-time stats available
+	- Added daily and all-time job view sidebar widgets
+	- Added new column to customer myjobs page which shows total views for each job listing
+	- Added job tag cloud widget
+	- Added new twitter sidebar widget with lots of options
+	- Enhanced Facebook like sidebar widget so you can now add options (title, connections, size)
+	- Added new widgetized sidebar for customers dashboard area
+	- Added support for custom hierarchical taxonomy permalinks (only works in WP 3.1+)
+
+
+1.1 - Second release
+fixes:
+	- Fixed orange rollovers in grey pro theme
+	- Fixed company logo upload title
+	- Admin login redirect
+	- Logo letter spacing
+	- lost password styling
+	- jobs no longer assigned to admin after approval
+	- moved application success box
+
+changes:
+	- Added pro.css for all pro themes (easier to change widths)
+	- Included IP Address of submitter after submit
+	- Added 125ads widget
+	- Made sidebars wider
+	- Added user profile page (must reinstall to have this set-up)
+	- Added post transition emails
+	- Added email functions
+	- Relist option added
+	- Allow html in job descriptions option
+	- exclude blog page option
+	- edit job page template/functionality added
+	- tinymce added
+	- new users are 'contributors;
+	- job cat display in post
+	- broken down job submission into separate files
+	- added author column to admin jobs
+	- Added New geolocation features to all screens/listings. Jobs without lat/long will be 'Anywhere'
+	- Added Job Category Listing Template
+	- Make description boxes wider
+	- Added Logging functionality
+
+1.0 - First release
+fixes:
+	- none
+changes:
+	- added new custom taxonomy for job tags (/includes/theme-functions.php)
+	- added new admin option to allow easy change of job listing base (/includes/theme-functions.php, /includes/admin/admin-values.php)

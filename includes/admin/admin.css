@@ -1,0 +1,57 @@
+/* settings page */
+[class*="jobroller_page"] code {line-height:1.9;letter-spacing:1px;}
+[class*="jobroller_page"] textarea{display:block;}
+[class*="jobroller_page"] .social-ico{vertical-align:text-top; display:inline-block;}
+[class*="jobroller_page"] i.feedburnerico:before{content:"\f303";color:#FF7800;}
+[class*="jobroller_page"] i.twitterico:before{content: "\f301";color: #0093BD;}
+[class*="jobroller_page"] i.facebookico:before{content: "\f304";color: #3B5998;}
+[class*="jobroller_page"] i.googleico:before{content: "\f462";;color: #F93333;}
+[class*="jobroller_page"] i.sharethisico:before{content: "\f237";;color: #4BAA5B;}
+/* admin sidebar icons */
+#toplevel_page_app-dashboard .menu-icon-generic div.wp-menu-image:before {font-family: FontAwesome;content: "\f0b1";font-size: 18px;padding: 9px 0;}
+/* job packs */
+table.job_packs { border: 1px solid #ccc; padding: 1px; }
+table.job_packs td, table.job_packs th { border: 1px solid #ccc; padding: 3px; }
+table.job_packs th { font-weight: bold; }
+/* admin dashboard section */
+div.stats-info {float:left;width:45%;}
+div.stats_overview { float: right; width: 45%; background: none repeat scroll 0 0 #F9F9F9; border: 1px solid #DFDFDF; -moz-border-radius: 5px;-webkit-border-radius: 5px;-o-border-radius: 5px;-khtml-border-radius: 5px;border-radius: 5px;}
+.stats_overview, .overview_today {float: left; width: 42%; padding: 10px; }
+.stats_overview, .overview_previous {float: left; width: 40%; padding: 10px; }
+.stats_overview p.overview_day { font-size: 12px !important;color: #666666; font-weight: bold; margin-top: 6px;}
+.stats_overview p {margin: 0;padding: 0;text-align: center;text-shadow: 0 1px 0 #FFFFFF;text-transform: uppercase;}
+.stats_overview h3 {text-align: center;text-shadow: 0 1px 0 #FFFFFF;}
+.stats_overview p.overview_count {color: #333333;font-size: 20px !important;font-weight: bold;}
+.stats_overview p.overview_type, .stats_overview p.overview_type_seek, .stats_overview p.overview_type_recruiter { color: #999999; font-size: 9px !important; margin-bottom: 7px;}
+.stats_overview p.overview_type em {background: none repeat scroll 0 0 #FFFBE4;border-radius: 3px 3px 3px 3px;padding: 1px 5px 2px;}
+.stats_overview p.overview_type_seek em { background: none repeat scroll 0 0 #FFFBE4; border-radius: 3px 3px 3px 3px;padding: 1px 5px 2px;}
+.stats_overview p.overview_type_recruiter em { background: none repeat scroll 0 0 #FFFBE4; border-radius: 3px 3px 3px 3px;padding: 1px 5px 2px;}
+/* custom post/job edit columns */
+td.column-thumbnail {padding:7px;}
+td.column-logo {padding:7px;}
+p.admin-job-expired { font-weight: bold; }
+/* dashboard charts */
+#placeholder {width:100%; height:250px;}
+#charttooltip {font-size:11px;border: 1px solid #e3e3e3;background-color: #f1f1f1;padding: 3px 7px;margin-left:15px;-khtml-border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;text-shadow:1px 1px 0 #ffffff;}
+/* Geolocation */
+#map_wrap {margin-top:5px;border:solid 2px #ddd;}
+#geolocation-map {width:100%;height:200px;}
+.manage-column.column-priority {width: 100px;}
+/* Plans */
+#featured-pricing, #resumes-pricing {width: 500px;}
+/* Order */
+.legacy-order-id {color: #B9B9B9;}
+/* User Profile */
+.assign-plan {width: 15em;}
+/* Integration Options */
+.integration-logo {border: 1px solid #E5E5E5; padding: 10px;background-color: #fff;border-radius:5px;width:140px;height:55px;text-align:center;}
+.integration-logo.simply-hired img {margin-top:-10px;}
+.integration-logo.indeed img {margin-top: 5px;}
+/* Responsive */
+@media screen and (max-width: 782px) {
+	.fixed .column-thumbnail, .fixed .column-author, .fixed .column-job_cat, .fixed .column-job_type, .fixed .column-job_salary,
+	.fixed .column-company, .fixed .column-location, .fixed .column-addon, .fixed .column-expire_date, .fixed .column-logo,
+	.fixed .column-resume_job_type, .fixed .column-resume_category, .fixed .column-resume_specialities, .fixed .column-resume_languages,
+	.fixed .column-plan, .fixed .column-trial, .fixed .column-start-date, .fixed .column-end-date, .fixed .column-recurs,
+	.fixed .column-keywords { display: none; }
+}

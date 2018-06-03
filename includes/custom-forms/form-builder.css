@@ -1,0 +1,145 @@
+/* jquery.formbuilder css */
+
+.toolbar {
+	padding: 7px 0 2px;
+	line-height: 2.2em;
+}
+
+.frmb li.postbox {
+	background: #fff;
+}
+
+.frmb li.postbox h3 {
+	padding: 10px;
+	background: #F9F9F9;
+	border-bottom: 1px solid #e5e5e5;
+	cursor: move;
+}
+
+.frm-elements {
+	padding: 15px 10px;
+}
+
+.frm-elements label {
+	width: 30%;
+	display: inline-block;
+}
+
+.frm-elements label.options {
+	vertical-align: top;
+	margin-top: 5px;
+}
+
+.frm-elements input[type=text] {
+	width: 69%;
+}
+
+.frm-elements .fields {
+	width: 69%;
+	display: inline-block;
+	max-height: 400px;
+	min-height: 30px;
+	padding: 4px 0;
+	overflow: auto;
+	overflow-x: hidden;
+}
+
+.frm-elements label.error {
+	width: 100%;
+	margin-left: 0;
+	margin-top: 3px;
+	padding-left: 4px;
+	color: #F00;
+	font-style: italic;
+}
+
+.frm-elements .option-row label.error {
+	padding-left: 30px;
+}
+
+.frm-elements .fields input[type=checkbox],
+.frm-elements .fields input[type=radio] {
+	margin-right: 10px;
+}
+
+.option-row {
+	margin-bottom: 5px;
+}
+
+.frm-elements .fields input[type=text] {
+	width: 99%;
+}
+
+.frm-elements .fields .option-row input[type=text] {
+	width: 60%;
+}
+
+.frm-elements .fields label.auto {
+	width: auto;
+	margin: 0 0 5px 0;
+}
+
+.frm-holder .dashicons {
+	line-height: 1.6em;
+	text-decoration: none;
+	opacity: 0.7;
+	color: #82878c;
+}
+
+.frm-holder .dashicons-no {
+	line-height: 1.5em;
+}
+
+.frm-holder .dashicons-dismiss:hover {
+	color: #C00;
+}
+
+.frm-holder .dashicons:hover {
+	opacity: 1;
+}
+
+.frm-elements .fields .add-area {
+	position: relative;
+	left: -30px;
+	margin-top: -22px;
+	width: 20px;
+}
+
+.frm-elements:after,
+.frm-fld:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
+a.delete {
+	float: right;
+}
+
+#toggle-all {
+	float: right;
+	text-decoration: none;
+}
+
+#toggle-all:focus {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.form-header {
+	display: block;
+	width: auto;
+	position: relative;
+	z-index: 1000;
+	margin-bottom: 15px;
+}
+
+.button-wrap .button {
+	margin: 0 2px;
+}
+
+.field-tip {
+	padding: 3px;
+}
