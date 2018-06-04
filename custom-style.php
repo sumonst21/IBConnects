@@ -545,8 +545,9 @@
             width: 100%;
             height: 100%;
             max-width: 360px;
-            max-height: 220px;
             */
+            max-height: 220px;
+
         }
         .cp-news-grid-style-1 .cp-post-tools li:nth-child(2) {
             display: none;
@@ -557,6 +558,9 @@
         }
         .cp-news-grid-style-3 .cp-thumb img {
             max-height: 155px;
+        }
+        .cp-news-grid-style-5 .cp-news-list img {
+            max-height: 250px;
         }
         .footer-logo img {
             background: #FFF;

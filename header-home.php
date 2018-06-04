@@ -139,62 +139,7 @@
                                         </ul>
                                     </li>
                                     <li> <a href="<?php echo $siteurl; ?>#">Blog</a>
-                                        <ul class="drop-down full-width blog-menu hover-expand">
-                                            <li>
-                                                <ul>
-                                                    <li>
-                                                        <a href="<?php echo $siteurl; ?>#"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mm-1.jpg" alt=""> </a>
-                                                        <h3><a href="<?php echo $siteurl; ?>#">Proin id diam in nulla sagittempor</a></h3>
-                                                    </li>
-                                                    <li>
-                                                        <a href="<?php echo $siteurl; ?>#"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mm-2.jpg" alt=""> </a>
-                                                        <h3><a href="<?php echo $siteurl; ?>#">Proin id diam in nulla sagittempor</a></h3>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li>
-                                                        <a href="<?php echo $siteurl; ?>#"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mm-3.jpg" alt=""> </a>
-                                                        <h3><a href="<?php echo $siteurl; ?>#">Proin id diam in nulla sagittempor</a></h3>
-                                                    </li>
-                                                    <li>
-                                                        <a href="<?php echo $siteurl; ?>#"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/mm-4.jpg" alt=""> </a>
-                                                        <h3><a href="<?php echo $siteurl; ?>#">Proin id diam in nulla sagittempor</a></h3>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
 
-                                                    <li class="validation">
-                                                        <h2>Blog Layouts</h2>
-                                                    </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-full.html"> Blog Full</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-medium.html"> Blog Medium</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-column.html"> Blog Colum</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-grid-modern.html"> Blog Grid Modren</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-top-featured.html"> Blog Top Featured</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/blog-masonry.html"> Blog Masonry</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/single-post.html"> Single Post</a> </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-
-                                                    <li class="validation">
-                                                        <h2>Blog Category</h2>
-                                                    </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/category-layout-3.html">Photography</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/category-layout-2.html">Sports</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/category-layout-1.html">Fashion</a> </li>
-                                                    <li> <a href="http://html.crunchpress.com/materialmag/category-layout-4.html">Lifestyle</a> </li>
-                                                    <li> <a href="<?php echo $siteurl; ?>#">World</a> </li>
-                                                    <li> <a href="<?php echo $siteurl; ?>#">Health</a> </li>
-                                                    <li> <a href="<?php echo $siteurl; ?>#">Technology</a> </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
                                     </li>
                                     <li><a href="#">FAQ</a></li>
                                     <li><a href="#">Contact Us</a></li>

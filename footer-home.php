@@ -156,10 +156,10 @@
                                 <div class="cp-widget-content">
                                     <ul class="tweets">
                                         <li><a href="#">@nelson.doe</a>
-                                            <div class="tweets_txt">Nunc nisl tortor, pretium quis magna a, egestas laoreet lectus <span>themeforest.net/item/materialmag</span></div>
+                                            <div class="tweets_txt">Nunc nisl tortor, pretium quis magna a, egestas laoreet lectus <span>freelancer.com/u/sumonst21</span></div>
                                         </li>
                                         <li><a href="#">@nelson.doe</a>
-                                            <div class="tweets_txt">Proin ipsum elit, varius eu tempor sit amet, rutrum a justo neque eget <span>themeforest.net/item/materialmag</span></div>
+                                            <div class="tweets_txt">Proin ipsum elit, varius eu tempor sit amet, rutrum a justo neque eget <span>freelancer.com/u/sumonst21</span></div>
                                         </li>
                                     </ul>
                                 </div>
